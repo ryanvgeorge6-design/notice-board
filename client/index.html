@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Notice Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container header-inner">
+        <div class="brand-wrap">
+          <div class="brand-mark">C</div>
+          <h1>Campus Notice Board</h1>
+        </div>
+
+        <nav aria-label="Main navigation" class="main-nav">
+          <a href="#">Home</a>
+          <a href="#notice-form">Add Notice</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-shell">
+      <section class="panel form-panel">
+        <div class="panel-heading">
+          <span class="eyebrow">Quick share</span>
+          <h2>Post a Notice</h2>
+        </div>
+
+        <form id="notice-form" class="notice-form">
+          <div class="form-grid">
+            <div class="field field-full">
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="Enter notice title" required />
+            </div>
+
+            <div class="field field-full">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="Write your notice here" required></textarea>
+            </div>
+
+            <div class="field">
+              <label for="category">Category</label>
+              <select id="category">
+                <option value="Events">Events</option>
+                <option value="Academics">Academics</option>
+                <option value="Hostel">Hostel</option>
+                <option value="General">General</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="postedBy">Posted By</label>
+              <input id="postedBy" type="text" placeholder="Your name" required />
+            </div>
+          </div>
+
+          <button id="submit-btn" type="submit">Post Notice</button>
+        </form>
+      </section>
+
+      <section class="panel filter-panel" aria-label="Filter notices by category">
+        <div class="filter-wrap">
+          <label for="filter-category">Filter by category</label>
+          <select id="filter-category">
+            <option value="All">All</option>
+            <option value="Events">Events</option>
+            <option value="Academics">Academics</option>
+            <option value="Hostel">Hostel</option>
+            <option value="General">General</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="cards-panel" aria-live="polite">
+        <div id="notice-list" class="notice-grid"></div>
+      </section>
+    </main>
+
+    <!--
+      <div class="notice-card"><span class="notice-category">Events</span><h3 class="notice-title">Title</h3><p class="notice-message">Message</p><p class="notice-meta">Posted by Asha</p><div class="card-actions"><button class="btn-edit">Edit</button><button class="btn-delete">Delete</button></div></div>
+    -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
